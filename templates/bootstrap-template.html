@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    {% block header %}
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384- GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <title>{% block title %}{% endblock %} - Dino World</title>
+    </head>
+    <style>
+      
+    </style>
+    {% endblock %}
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(178,139,100);">
+            <img src=/dino.svg width="30" height="30" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="/home">Dino World</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/dinodata/0">Our favorite Dinos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/trivia">Take a Quiz!</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="main-page">
+              <div class="bg"></div>
+              <!-- <div class="data">
+            </div> -->
+            
+          </div>
+          <div class="container">
+              <div class="content">
+        
+                <!-- child template -->
+                {% block content %}
+                {% endblock %}
+        
+              </div>
+            </div>
+    </body>
+</html>

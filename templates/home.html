@@ -1,0 +1,65 @@
+{% extends "bootstrap-template.html" %}
+{% block header %}
+{{super()}}
+<script>
+    var dinos = {{dinos|tojson}}
+</script>
+<style> 
+    .heading{
+        text-align: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .welcm_msg{
+        padding-bottom: 10px;   
+    }
+    .btn{
+        align-items: center;
+    }
+    .container
+    {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 550px;
+        height: 220px;
+        background-color: rgb(225,169,84);
+        border-radius: 3px;
+        alpha: 0.5;
+    }
+    body {
+        background: url('https://nerdist.com/wp-content/uploads/2018/06/Jurassic-World-Fallen-Kingdom-Chris-Pratt-T-Rex.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+      }
+</style>
+{% endblock %}
+{% block content %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="heading">
+                    Let's learn Dinosaur names!
+                </h1>
+                <div class="welcm_msg">
+                   Ever wonder how Tyrranosaurus Rex got its name? Or the Velociraptor? There is a story behind each name. This website will help you learn the names of some popular dinosaurs.
+                </div>
+                <div class="button_holder text-center">
+                        <a href="/dinodata/0" >
+                                <button type="button" class="btn btn-primary">Get Started</button>
+                             </a> 
+                    <!-- <button type="button" class="btn btn-primary"><a href="https://google.com"></a>
+                        Get Started</button> -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

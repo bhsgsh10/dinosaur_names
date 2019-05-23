@@ -1,0 +1,105 @@
+{% extends "bootstrap-template.html" %}
+{% block header %}
+{{super()}}
+<script type="text/javascript" src="{{ url_for('static',filename='dinodata.js') }}"></script>
+<script type="text/javascript" src="https://www.solodev.com/assets/pagination/jquery.twbsPagination.js"></script>
+<script>
+    var dinos = {{dinos|tojson}}
+    var dino_id = {{dino_id|tojson}}
+</script>
+<style>
+    .name{
+        /* padding-top: 10px; */
+        text-align: center;
+        height: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .dino{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+    #image_div{
+        text-align: center;
+        height: 300px;
+        width: 400px;
+        padding-bottom: 20px;
+    }
+    #image_div img{
+        height: 300px;
+        width: 400px;
+    }
+    .found{
+        font-weight: bold;
+        
+    }
+    .col-md-12{
+        padding-top: 10px;
+        font-size: 18px;
+    }
+    .detail{
+        font-weight: bold;
+    }
+    #found_in{
+        padding-top: 20px;
+    }
+
+    .center {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+    }
+
+    .pagination a.active {
+        background-color: rgb(178,139,100);
+        color: white;
+        border: 1px solid rgb(178,139,100);
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    } 
+    #quiz-button{
+        padding-top: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    #fun-facts{
+        font-size: 16px;
+        color: rgb(120, 120, 120);
+    }
+    #meaning{
+        font-size: 20px;
+    }
+    #mn{
+        padding-top: 10px;
+        text-align: center;
+        font-size: 18px;
+    }
+    #origin{
+        padding-top: 30px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="center">
+    <div class="pagination"></div>
+</div>
+<div id="placeholder"></div>
+
+
+{% endblock %}

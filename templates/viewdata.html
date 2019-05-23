@@ -1,0 +1,63 @@
+{% extends "bootstrap-template.html" %}
+{% block header %}
+{{super()}}
+<script type="text/javascript" src="{{ url_for('static',filename='viewdata.js') }}"></script>
+<script>
+    var dinos = {{dinos|tojson}}
+</script>
+<style>
+    #buttons{
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        /* margin-bottom: 10px; */
+    }
+    .header{
+        text-align: center;
+    }
+    .name{
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .description{
+        font-size: 16px;
+        font-weight:normal;
+        padding-bottom: 10px;
+        text-align: left;
+    }
+    .image_div{
+        width: 300px;
+        height: 200px;
+    }
+    .image_div img{
+        width: 300px;
+        height: 200px;
+    }
+    .dino{
+        padding-top: 10px;
+        padding-bottom: 10px; 
+    }
+    .know-more{
+        text-align: left;
+    }
+    .row{
+        border: 1px solid rgb(178,139,100);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+
+{% endblock %}
+{% block content %}
+    <!-- <div id="buttons">
+        <a href="/getCSV" target="blank">
+            <button class="btn btn-primary" id="download">Download the data</button>
+        </a>
+    </div> -->
+    <div class="header">
+        <h1>Dinosaurs and Names</h1>
+    </div>
+
+{% endblock %}
